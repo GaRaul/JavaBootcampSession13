@@ -104,7 +104,7 @@ DROP TABLE IF EXISTS `Escrito_por`;
 CREATE TABLE `Escrito_por` (
   `ClaveLibro` int unsigned NOT NULL,
   `ClaveAutor` int unsigned NOT NULL,
-  KEY `ClaveLibro` (`ClaveLibro`,`ClaveAutor`),
+  KEY `ClaveLibro` (`ClaveLibro`),
   KEY `ClaveAutor` (`ClaveAutor`),
   CONSTRAINT `Escrito_por_ibfk_1` FOREIGN KEY (`ClaveLibro`) REFERENCES `Libro` (`ClaveLibro`),
   CONSTRAINT `Escrito_por_ibfk_2` FOREIGN KEY (`ClaveAutor`) REFERENCES `Autor` (`ClaveAutor`)
@@ -162,7 +162,7 @@ CREATE TABLE `Prestamo` (
   `Fecha_prestamo` date DEFAULT NULL,
   `Fecha_devolucion` date DEFAULT NULL,
   `Notas` blob,
-  KEY `ClaveSocio` (`ClaveSocio`,`ClaveEjemplar`),
+  KEY `ClaveSocio` (`ClaveSocio`),
   KEY `ClaveEjemplar` (`ClaveEjemplar`),
   CONSTRAINT `Prestamo_ibfk_1` FOREIGN KEY (`ClaveSocio`) REFERENCES `Socio` (`ClaveSocio`),
   CONSTRAINT `Prestamo_ibfk_2` FOREIGN KEY (`ClaveEjemplar`) REFERENCES `Ejemplar` (`ClaveEjemplar`)
@@ -237,7 +237,7 @@ DROP TABLE IF EXISTS `Trata_sobre`;
 CREATE TABLE `Trata_sobre` (
   `ClaveLibro` int unsigned NOT NULL,
   `ClaveTema` int unsigned NOT NULL,
-  KEY `ClaveLibro` (`ClaveLibro`,`ClaveTema`),
+  KEY `ClaveLibro` (`ClaveLibro`),
   KEY `ClaveTema` (`ClaveTema`),
   CONSTRAINT `Trata_sobre_ibfk_1` FOREIGN KEY (`ClaveLibro`) REFERENCES `Libro` (`ClaveLibro`),
   CONSTRAINT `Trata_sobre_ibfk_2` FOREIGN KEY (`ClaveTema`) REFERENCES `Tema` (`ClaveTema`)
@@ -270,4 +270,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-28 12:22:17
+-- Dump completed on 2022-01-28 12:43:44
