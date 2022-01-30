@@ -41,4 +41,3 @@ Cod_Curso int unsigned,
 primary key (DNI_Profesor, Cod_Curso),
 foreign key(DNI_Profesor) references Profesores(DNI) on update cascade on delete cascade,
 foreign key(Cod_Curso) references Cursos(Cod_Curso) on update cascade on delete cascade);
-
