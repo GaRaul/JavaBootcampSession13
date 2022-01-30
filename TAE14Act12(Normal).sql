@@ -24,7 +24,7 @@ Apellido1 varchar(100),
 Apellido2 varchar(100),
 DNI varchar(8) primary key,
 Direccion varchar(255),
-Sexo char(1) ,
+Sexo enum("H","M"),
 Fecha_Nacimiento date,
 Curso int unsigned);
 
